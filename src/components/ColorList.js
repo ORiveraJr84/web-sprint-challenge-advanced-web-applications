@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import EditMenu from "./EditMenu";
 import { axiosWithAuth } from "../helpers/axiosWithAuth";
 
@@ -54,7 +53,7 @@ const ColorList = ({ colors, updateColors }) => {
             return singleColor.id !== res.data;
           })
         ); */
-        
+
         // !SECTION
 
         axiosWithAuth()

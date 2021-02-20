@@ -40,7 +40,10 @@ test("Fetches data and renders the bubbles on mounting", async () => {
 
   const colors = await waitFor(() => screen.getAllByTestId("color"));
 
-  expect(bubbles).toHaveLength(2);
+  await waitFor(() => {
+    expect(bubbles).toHaveLength(2);
+    expect(colors).toHaveLength(2);
+  });
 });
 
 //Task List
