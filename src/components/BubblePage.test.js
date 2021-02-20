@@ -38,6 +38,8 @@ test("Fetches data and renders the bubbles on mounting", async () => {
   const bubbles = await waitFor(() => screen.getAllByTestId("circle"));
   //!SECTION
 
+  const colors = await waitFor(() => screen.getAllByTestId("color"));
+
   expect(bubbles).toHaveLength(2);
 });
 
