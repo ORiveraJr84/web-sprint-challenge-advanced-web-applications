@@ -22,10 +22,10 @@ In this project you will create a login page and request a token from the server
 
 ### Task 1: Project Setup
 
-- [x] Fork and clone this repository.
-- [x] Create a new working branch: git checkout -b `<firstName-lastName>`.
-- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [x] Push commits: git push origin `<firstName-lastName>`.
+- [] Fork and clone this repository.
+- [] Create a new working branch: git checkout -b `<firstName-lastName>`.
+- [] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [] Push commits: git push origin `<firstName-lastName>`.
 - [] **RUN** `npm install` to install your dependencies.
 - [] **RUN** `npm start` to start your application.
 
