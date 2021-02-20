@@ -42,14 +42,29 @@ const ColorList = ({ colors, updateColors }) => {
 
   const deleteColor = (color) => {
     axiosWithAuth()
-      .delete(`/colors/${color.id}`)
+      .delete(`/colors/${color.id}`, color)
       .then((res) => {
         console.log(`This is the successful message from the API`, res);
-        updateColors(
+
+        // SECTION
+        // NOTE Attempted to updateColors without another API call but couldn't get it working.
+
+        /* updateColors(
           colors.filter((singleColor) => {
             return singleColor.id !== res.data;
           })
-        );
+        ); */
+        
+        // !SECTION
+
+        axiosWithAuth()
+          .get(`/colors`)
+          .then((res) => {
+            updateColors(res.data);
+          })
+          .catch((err) => {
+            console.log(`This is the error`, err);
+          });
       })
       .catch((err) => {
         console.log(`This is the error message from the API ${err}`);
