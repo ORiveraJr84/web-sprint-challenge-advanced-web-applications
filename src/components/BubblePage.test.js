@@ -35,17 +35,11 @@ test("Fetches data and renders the bubbles on mounting", async () => {
 
   render(<BubblePage />);
 
-  // SECTION
-  // NOTE Need to figure out a way to target svg circles aka bubbles, and to target list of colors
-  // NOTE Added a data-testid onto each to target
-
   await waitFor(() => {
     expect(screen.getAllByTestId("circle")).toHaveLength(2);
   });
-  //!SECTION
 });
 
 //Task List
-//1. Setup test for basic rendering of component
-//2. Setup test for initial rendering of bubbles on loading
-// NOTE Initial test passed. Only stopped working once I attempted to retrieve the data. Not sure what's wrong. Can't get any tests to pass.
+// ✔️ 1. Setup test for basic rendering of component
+// ✔️ 2. Setup test for initial rendering of bubbles on loading
