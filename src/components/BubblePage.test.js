@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import BubblePage from "./BubblePage";
-import { axiosWithAuth as mockGetColors } from "../helpers/axiosWithAuth";
+// import { getColors as mockGetColors } from "../helpers/getColors";
 
-jest.mock("../helpers/axiosWithAuth");
+jest.mock("../helpers/getColors");
 
 test("Renders BubblePage without errors", () => {
   // Finish this test
@@ -12,8 +12,7 @@ test("Renders BubblePage without errors", () => {
 
 test("Fetches data and renders the bubbles on mounting", async () => {
   // Finish this test
-  render(<BubblePage />);
-  mockGetColors.mockResolvedValueOnce({
+  /* mockGetColors.mockResolvedValueOnce({
     data: [
       {
         color: "aliceblue",
@@ -30,20 +29,20 @@ test("Fetches data and renders the bubbles on mounting", async () => {
         id: 2,
       },
     ],
-  });
+  }); */
+
+  // console.log(`This is the mockGetColors Fn --->`, mockGetColors());
+
+  render(<BubblePage />);
 
   // SECTION
-  // NOTE Need to figure out a way to target svg circles
+  // NOTE Need to figure out a way to target svg circles aka bubbles, and to target list of colors
   // NOTE Added a data-testid onto each to target
-  const bubbles = await waitFor(() => screen.getAllByTestId("circle"));
-  //!SECTION
-
-  const colors = await waitFor(() => screen.getAllByTestId("color"));
 
   await waitFor(() => {
-    expect(bubbles).toHaveLength(2);
-    expect(colors).toHaveLength(2);
+    expect(screen.getAllByTestId("circle")).toHaveLength(2);
   });
+  //!SECTION
 });
 
 //Task List
